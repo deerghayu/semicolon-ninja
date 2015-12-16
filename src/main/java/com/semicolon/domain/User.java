@@ -1,11 +1,13 @@
 package com.semicolon.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="users")
 public class User {
 
 	@Id
@@ -13,16 +15,17 @@ public class User {
 	private long id;
 
 	private String firstName;
-	
 	private String lastName;
-
-	private String userName;
-
+	private String email;
+	private String username;
 	private String password;
+	private int enabled;
+
+	@Enumerated(EnumType.STRING)
+	private UserRole userRole;
 
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public long getId() {
@@ -49,12 +52,20 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -63,6 +74,22 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public UserRole getRole() {
+		return userRole;
+	}
+
+	public void setRole(UserRole userRole) {
+		this.userRole = UserRole.ROLE_USER;
+	}
+
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = 1;
 	}
 
 }
