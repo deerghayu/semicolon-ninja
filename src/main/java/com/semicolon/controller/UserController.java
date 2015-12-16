@@ -12,7 +12,6 @@ import com.semicolon.domain.User;
 import com.semicolon.service.UserService;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 	@Autowired
 	UserService userService;
