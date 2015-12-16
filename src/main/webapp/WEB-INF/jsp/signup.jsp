@@ -1,16 +1,14 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-<p>
-	Language: <a href="?language=en">English</a> <a href="?language=es">Spanish</a>
-</p>
-
 <form:form commandName="newUser" action="addUser" method="POST">
 
-	<fieldset>
-		<legend>Sign Up</legend>
+	<h3><legend>Sign Up</legend></h3>
+	<fieldset style="border-radius: 8px;">
+		
 
-		<label for="firstName"><spring:message code="user.name" text="some text"/> : </label>
+		<label for="firstName"><spring:message code="user.name"
+				text="some text" /> : </label>
 		<form:input id="firstName" path="firstName" />
 		<div style="text-align: center;">
 			<form:errors path="firstName" cssStyle="color:red;" />
@@ -49,3 +47,6 @@
 		<input type="reset"> <input type="submit" value="Sign Up">
 	</fieldset>
 </form:form>
+<p>
+	Language: <a href="?language=en">English</a> <a href="?language=es">Spanish</a>
+</p>

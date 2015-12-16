@@ -26,7 +26,7 @@
       <tiles:insertAttribute name="subHeader" />    
    </p>
 
-   <div class="row">
+   <div class="row container" >
      <tiles:insertAttribute name="body" />
    </div>
 	<br>
