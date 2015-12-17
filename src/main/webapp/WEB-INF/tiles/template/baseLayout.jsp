@@ -9,9 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title><tiles:insertAttribute name="title" /></title>
-
+<base href="${pageContext.request.contextPath}/"/>
    
 <style type="text/css">@import url("<c:url value="/resources/css/navigation.css"/>");</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <div>

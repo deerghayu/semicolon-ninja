@@ -6,18 +6,27 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
-@Entity(name="users")
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity(name = "users")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	
+	@NotEmpty
 	private String firstName;
 	private String lastName;
+	
+	@Email
 	private String email;
 	private String username;
+	
+	@Size(min=3, max =6, message="{length}")
 	private String password;
 	private int enabled;
 
